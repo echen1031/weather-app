@@ -1,8 +1,10 @@
 <div class="results-page">
-  Search Address: <%= @display_address %>
   <br>
   <br>
   Current Temperature:
-    <strong>F: </strong><%= @weather.farenheit %>
-    <strong>C: </strong><%= @weather.celcius %>
+    <strong>Current Temperature: </strong><%= @weather_service.current_temp %>
+    <br>
+    <strong>Low: </strong><%= @weather_service.low_temp %>
+    <br>
+    <strong>High: </strong><%= @weather_service.high_temp %>
 </div>

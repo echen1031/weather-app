@@ -10,8 +10,8 @@ class HomeController < ApplicationController
 
   # check weather with OpenWeather Client
   def check_weather
-    if @zipcode.present?
-      @weather = WeatherCheckService.new(@zipcode)
+    if @address_service.postal_code.present?
+      @weather_service = WeatherCheckService.new(@address_service)
       respond_to do |format|
         format.js { render action: 'index' }
       end
@@ -23,10 +23,8 @@ class HomeController < ApplicationController
 
   # validate address with Geocoder
   def validate_address
-    google_address = Geocoder.search(params[:input_address][:address])
-    @display_address = google_address[0].formatted_address
-    @zipcode = google_address[0].postal_code
+    @address_service = AddressCheckService.new(params[:input_address][:address])
   end
 
-  attr_reader :zipcode, :result
+  attr_reader :address_service
 end
