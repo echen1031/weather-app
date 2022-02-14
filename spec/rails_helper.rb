@@ -5,6 +5,18 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require 'geocoder'
+require 'webmock/rspec'
+Geocoder::Lookup::Test.add_stub(
+  "One Apple Park Way. Cupertino, CA 95014", [{
+    "postal_code" => "95014",
+    "formatted_address"=>"One Apple Park Way, Cupertino, CA 95014, USA",
+    "longitude" => -122.008972,
+    "latitude" => 37.33464379999999
+  }]
+)
+WebMock.disable_net_connect!(allow_localhost: true)
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

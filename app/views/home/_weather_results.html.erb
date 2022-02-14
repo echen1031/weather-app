@@ -1,0 +1,18 @@
+<div class="results-page">
+  <strong>Address Entered: </strong><%= @address_service.formatted_address %>
+  <br>
+  <br>
+    <strong>Current Temperature: </strong><%= @weather_service.current_temp %>
+    <br>
+    <br>
+    <strong>Low: </strong><%= @weather_service.low_temp %>
+    <br>
+    <br>
+    <strong>High: </strong><%= @weather_service.high_temp %>
+    <br>
+    <br>
+    <strong>Extended 8-day forecast: </strong><%= @weather_service.extended_forecast %>
+    <br>
+    <br>
+    Cached? - <%= @weather_service.cached? %>
+</div>

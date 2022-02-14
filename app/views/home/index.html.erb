@@ -1,0 +1,9 @@
+<%= form_for :input_address, remote: true, :url => check_weather_path do |f| %>
+  <%= f.label "Enter address to check weather" %>
+  <br>
+  <%= f.text_field :address %>
+  <%= f.submit "Check" %>
+<% end%>
+<br>
+<div id='weather_results'>
+</div>
