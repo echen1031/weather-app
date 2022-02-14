@@ -12,6 +12,7 @@ class HomeController < ApplicationController
   def check_weather
     if @address_service.postal_code.present?
       @weather_service = WeatherCheckService.new(@address_service)
+
       respond_to do |format|
         format.js { render action: 'index' }
       end
