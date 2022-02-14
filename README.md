@@ -1,24 +1,21 @@
-# README
+# Weather App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
 
-Things you may want to cover:
+Weather app will take any US address input and return the current temperature as well as the low, high, and extended forecasts
 
-* Ruby version
+## Setting up
 
-* System dependencies
+* `bundle install` to get all required gems
+* `bundle exec rake db:setup` to setup the database
+* You will need to obtain api key from [OpenWeatherMap] and place them in 'config/local_env.yml' as `WEATHER_API_KEY`
+* You will need to obtain api key from [GoogleCloudConsole] and place them in 'config/local_env.yml' as `GOOGLE_API_KEY`
 
-* Configuration
+## Running
 
-* Database creation
+`bundle exec rails s`
 
-* Database initialization
+This will run the Rails server on <http://localhost:3000>
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[OpenWeatherMap]: https://home.openweathermap.org/
+[GoogleCloudConsole]: https://console.cloud.google.com/
