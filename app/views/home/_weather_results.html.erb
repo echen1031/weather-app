@@ -1,10 +1,14 @@
 <div class="results-page">
   <br>
   <br>
-  Current Temperature:
-    <strong>Current Temperature: </strong><%= @weather_service.current_temp %>
+    <strong>Current Temperature: </strong><%= @weather_service.current_temp %> F
     <br>
-    <strong>Low: </strong><%= @weather_service.low_temp %>
     <br>
-    <strong>High: </strong><%= @weather_service.high_temp %>
+    <strong>Low: </strong><%= @weather_service.low_temp %> F
+    <br>
+    <br>
+    <strong>High: </strong><%= @weather_service.high_temp %> F
+    <br>
+    <br>
+    <strong>Extended 8-day forecast: </strong><%= @weather_service.extended_forecast %>
 </div>
