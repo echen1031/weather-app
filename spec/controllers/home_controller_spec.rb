@@ -27,6 +27,8 @@ describe HomeController, type: :controller do
         allow(service_double).to receive(:current_temp).and_return(80.29)
         allow(service_double).to receive(:low_temp)
         allow(service_double).to receive(:high_temp)
+        allow(service_double).to receive(:extended_forecast)
+        allow(service_double).to receive(:cached?)
         post :check_weather, params: { input_address: valid_address }, xhr: true
         expect(response).to be_successful
         expect(response.body).to include("80.29")

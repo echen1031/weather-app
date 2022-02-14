@@ -8,8 +8,8 @@ describe AddressCheckService, type: :model do
     Geocoder.configure(:lookup => :test)
   end
 
-  describe '#formatted_address' do
-    it 'returns a success celcius temperature' do
+  describe 'AddressCheckService to handle multiple methods' do
+    it 'successfully calls upon methods' do
       service = AddressCheckService.new('One Apple Park Way. Cupertino, CA 95014')
       expect(service).to respond_to(:formatted_address)
       expect(service).to respond_to(:longitude)
