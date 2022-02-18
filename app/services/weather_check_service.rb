@@ -10,7 +10,7 @@ class WeatherCheckService
     @type = type
     # caching the results for 30 minutes
     @weather_object = Rails.cache.fetch(address_service.postal_code, expires_in: 30.minutes) do
-      @api_call = 'false'
+      @api_call = 'true'
       client.one_call(
         lat: address_service.latitude,
         lon: address_service.longitude,

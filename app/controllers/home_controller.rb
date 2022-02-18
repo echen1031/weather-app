@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  require 'street_address'
   before_action :validate_address, only: [:check_weather]
-  helper_method :zipcode, :display_address
 
   def index
   end
